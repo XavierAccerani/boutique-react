@@ -19,9 +19,11 @@ const ProductListing = () => {
   };
 
   useEffect(() => {
+    console.log("dans le useEffect avant fetch");
     fetchProducts();
+    console.log("dans le useEffect avant fetch");
   }, []);
-  console.log("the products : ", products);
+  console.log("the products after useEffect: ", products);
   return (
     <div className="ui grid container">
       <ProductComponent />
