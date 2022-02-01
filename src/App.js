@@ -8,15 +8,21 @@ import ProductComponent from "./containers/ProductComponent";
 
 function App() {
   return (
-    <div className="App">
-      <Router>
+    <div>
+      <div className="App">
         <Header />
-        <Routes>
-          <Route path="/" exact element={<ProductListing />} />
-          <Route path="/product/:productI" exact element={<ProductDetail />} />
-          <Route> 404 not found </Route>
-        </Routes>
-      </Router>
+        <Router>
+          <Routes>
+            <Route path="/" exact element={<ProductListing />} />
+            <Route
+              path="/product/:productI"
+              exact
+              element={<ProductDetail />}
+            />
+            <Route> 404 not found </Route>
+          </Routes>
+        </Router>
+      </div>
     </div>
   );
 }

@@ -4,24 +4,19 @@ import ProductComponent from "./ProductComponent";
 import { setProducts } from "../redux/actions/productActions";
 import fetchProducts from "../services/productServices";
 import { fetchProduct } from "../actions/productActions";
-import Counter from "../features/counter/Counter";
+import { Counter } from "../features/counter/Counter";
 
 const ProductListing = () => {
-  const products = useSelector((state) => state);
-  const dispatch = useDispatch();
+  const {products} = useSelector((state) => state.counter);
 
-  dispatch(fetchProduct());
+  console.log('products11', products);
 
-  useEffect(() => {
-    console.log("dans le useEffect avant fetch");
-    console.log("dans le useEffect avant fetch");
-  }, []);
-
-  console.log("the products after useEffect: ", products);
   return (
     <div className="ui grid container">
-      <ProductComponent />
-      <Counter />
+      {/* <ProductComponent /> */}
+      <div>
+        <Counter />
+      </div>
     </div>
   );
 };

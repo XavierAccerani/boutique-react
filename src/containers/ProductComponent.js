@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const ProductComponent = () => {
-  const products = useSelector((state) => state.allProducts.products);
+  const {products} = useSelector((state) => state.counter);
 
   // 37 18
 
@@ -28,7 +28,7 @@ const ProductComponent = () => {
       </div>
     );
   });
-  return <>{renderList}</>;
+  return <> {renderList}</>;
 };
 
 export default ProductComponent;
